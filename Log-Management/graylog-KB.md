@@ -32,31 +32,29 @@ timedatectl set-timezone Asia/Bangkok
 timedatectl
 ```
 
-##### 1\.ติดตั้ง Docker และ Docker Compose
+##### 1.ติดตั้ง Docker และ Docker Compose
 
 ```
 sudo apt update && sudo apt install -y docker.io docker-compose
 sudo systemctl enable --now docker
 ```
 
-##### **2\.ตรวจสอบการติดตั้ง Docker**
+##### 2.ตรวจสอบการติดตั้ง Docker
 
 ```
 docker --version
 docker-compose --version
 ```
 
-##### 3\.สร้าง Docker Compose ไฟล์สำหรับ Graylog
-
-     **3\.1 สร้างไดเรกทอรีสำหรับ Graylog**
+##### 3.สร้าง Docker Compose ไฟล์สำหรับ Graylog
+3.1 สร้างไดเรกทอรีสำหรับ Graylog**
 
 ```
 mkdir graylog
 cd graylog
 nano docker-compose.yml
 ```
-
-     **3\.2 สร้างไฟล์** `docker-compose.yml`
+3.2 สร้างไฟล์ `docker-compose.yml`
 
 ```
 version: '3'
@@ -98,14 +96,13 @@ networks:
 
 > **หมายเหตุ**  
 
-::: error
 GRAYLOG_ROOT_PASSWORD_SHA2 = admin เป็นรหัสผ่านที่เอาไปเข้ารหัส sha256sum
 
 GRAYLOG_HTTP_EXTERNAL_URI=http:// ใส่ IP ของเครื่องที่ติดตั้ง :9000/
 
-:::
 
-##### 4\.เริ่มต้นใช้งาน สำหรับ Graylog
+
+4.เริ่มต้นใช้งาน สำหรับ Graylog
 
 ```
 docker-compose up -d
