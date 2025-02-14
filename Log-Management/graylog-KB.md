@@ -1,5 +1,6 @@
 
 # วิธี install Graylog บน ubuntu for Docker
+![image](https://github.com/user-attachments/assets/e411fb28-40f3-422a-ac02-b43b12130deb)
 
 Graylog แนะนำ **พื้นที่เก็บข้อมูลขั้นต่ำ** ตามนี้
 
@@ -20,6 +21,8 @@ Graylog แนะนำ **พื้นที่เก็บข้อมูลข
 * MongoDB ใช้พื้นที่เล็กน้อย (2-5GB)
 * OpenSearch ใช้พื้นที่หลักในการเก็บ log
 * พื้นที่ที่ต้องใช้จริงขึ้นอยู่กับจำนวน log ที่รับเข้าและระยะเวลาที่ต้องการเก็บ
+  
+![image](https://github.com/user-attachments/assets/63b1e2e6-bc5c-4b96-bf0b-31f3d43298d1)
 
 ℹ️ **Graylog มีระบบหมุนเวียน log (Retention Policy)** เพื่อลบ log เก่าอัตโนมัติ ช่วยลดการใช้พื้นที่จัดเก็บ.
 
