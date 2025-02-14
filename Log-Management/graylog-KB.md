@@ -140,6 +140,9 @@ sudo docker-compose up -d
 sudo netstat -tuln | grep 9000
 ```
 
+อ้างอิงการ Config
+https://www.virtualizationhowto.com/2023/09/graylog-docker-compose-setup-an-open-source-syslog-server-for-home-labs/
+
 ##### ตรวจสอบว่า Graylog ได้ รับ Log แล้วหรือไม่
 
 ```
