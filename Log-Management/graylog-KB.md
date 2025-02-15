@@ -67,6 +67,10 @@ services:
     image: mongo:4.2
     networks:
       - graylog
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - mongo_data:/data/db
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
@@ -75,13 +79,17 @@ services:
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     networks:
       - graylog
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - es_data:/usr/share/elasticsearch/data
 
   graylog:
     image: graylog/graylog:4.2
     environment:
       - GRAYLOG_PASSWORD_SECRET=verylongandsecurepassword
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-      - GRAYLOG_HTTP_EXTERNAL_URI=http://192.168.200.253:9000/
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://ใส่ IP ของเครื่องที่ติดตั้ง:9000/
     entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 -- /docker-entrypoint.sh
     depends_on:
       - mongo
@@ -92,9 +100,22 @@ services:
       - "9000:9000"
       - "12201:12201/udp"
       - "514:514/udp" #syslog
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - graylog_data:/usr/share/graylog/data
+      - graylog_journal:/usr/share/graylog/journal
+      - graylog_log:/var/log/graylog
 
 networks:
   graylog:
+
+volumes:
+  mongo_data:
+  es_data:
+  graylog_data:
+  graylog_journal:
+  graylog_log:
 ```
 
 > **หมายเหตุ**  
