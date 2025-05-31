@@ -61,61 +61,105 @@ nano docker-compose.yml
 
 ```
 version: '3'
-
 services:
-  mongo:
-    image: mongo:4.2
-    networks:
-      - graylog
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-      - mongo_data:/data/db
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
-    environment:
-      - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
-    networks:
-      - graylog
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-      - es_data:/usr/share/elasticsearch/data
-
-  graylog:
-    image: graylog/graylog:4.2
-    environment:
-      - GRAYLOG_PASSWORD_SECRET=verylongandsecurepassword
-      - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-      - GRAYLOG_HTTP_EXTERNAL_URI=http://ใส่ IP ของเครื่องที่ติดตั้ง:9000/
-    entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 -- /docker-entrypoint.sh
-    depends_on:
-      - mongo
-      - elasticsearch
-    networks:
-      - graylog
+  # MongoDB: https://hub.docker.com/_/mongo/
+  mongodb:
+    image: "mongo:6.0.18"
     ports:
-      - "9000:9000"
-      - "12201:12201/udp"
-      - "514:514/udp" #syslog
+      - "27017:27017"
+    restart: "on-failure"
+    networks:
+      - graylog
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-      - graylog_data:/usr/share/graylog/data
-      - graylog_journal:/usr/share/graylog/journal
-      - graylog_log:/var/log/graylog
+      - "mongodb_data:/data/db"
+      - "mongodb_config:/data/configdb"
+
+  opensearch:
+    image: "opensearchproject/opensearch:2.15.0"
+    environment:
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "bootstrap.memory_lock=true"
+      - "discovery.type=single-node"
+      - "action.auto_create_index=false"
+      - "plugins.security.ssl.http.enabled=false"
+      - "plugins.security.disabled=true"
+      # Can generate a password for `OPENSEARCH_INITIAL_ADMIN_PASSWORD` using a linux device via:
+      # tr -dc A-Z-a-z-0-9_@#%^-_=+ < /dev/urandom | head -c${1:-32}
+      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=+_8r#wliY3Pv5-HMIf4qzXImYzZf-M=M"
+    ulimits:
+      memlock:
+        hard: -1
+        soft: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    ports:
+      - "9203:9200"
+      - "9303:9300"
+    restart: "on-failure"
+    networks:
+      - graylog
+    volumes:
+      - "opensearch:/usr/share/opensearch/data"
+
+  # Graylog: https://hub.docker.com/r/graylog/graylog/
+  graylog:
+    hostname: "server"
+    image: "graylog/graylog:6.2.2"
+    # To install Graylog Open: "graylog/graylog:6.1"
+    depends_on:
+      mongodb:
+        condition: "service_started"
+      opensearch:
+        condition: "service_started"
+    entrypoint: "/usr/bin/tini -- wait-for-it opensearch:9200 -- /docker-entrypoint.sh"
+    environment:
+      GRAYLOG_NODE_ID_FILE: "/usr/share/graylog/data/config/node-id"
+      GRAYLOG_HTTP_BIND_ADDRESS: "0.0.0.0:9000"
+      GRAYLOG_ELASTICSEARCH_HOSTS: "http://opensearch:9200"
+      GRAYLOG_MONGODB_URI: "mongodb://mongodb:27017/graylog"
+      # To make reporting (headless_shell) work inside a Docker container
+      GRAYLOG_REPORT_DISABLE_SANDBOX: "true"
+      # CHANGE ME (must be at least 16 characters)!
+      GRAYLOG_PASSWORD_SECRET: "somepasswordpepper"
+      # Password: "admin"
+      GRAYLOG_ROOT_PASSWORD_SHA2: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+      GRAYLOG_HTTP_EXTERNAL_URI: "http://127.0.0.1:9000/"
+    ports:
+      # Graylog web interface and REST API
+      - "9000:9000/tcp"
+      # Beats
+      - "5044:5044/tcp"
+      # Syslog TCP
+      - "5140:5140/tcp"
+      # Syslog UDP
+      - "5140:5140/udp"
+      # GELF TCP
+      - "12201:12201/tcp"
+      # GELF UDP
+      - "12201:12201/udp"
+      # Forwarder data
+      - "13301:13301/tcp"
+      # Forwarder config
+      - "13302:13302/tcp"
+      # UDP-514
+      - "514:514/udp"
+    restart: "on-failure"
+    networks:
+      - graylog
+    volumes:
+      - "graylog_data:/usr/share/graylog/data"
 
 networks:
   graylog:
+    driver: "bridge"
 
 volumes:
-  mongo_data:
-  es_data:
+  mongodb_data:
+  mongodb_config:
+  opensearch:
   graylog_data:
-  graylog_journal:
-  graylog_log:
+
 ```
 
 > **หมายเหตุ**  
