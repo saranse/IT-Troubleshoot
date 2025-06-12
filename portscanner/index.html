@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Scanner Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://inwfile.com/s-dg/4yf4yy.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', sans-serif;
+            padding-top: 56px;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 4px;
+            font-weight: bold;
+            display: block;
+        }
+
+        input,
+        select {
+            background-color: #d8d8d8;
+            padding: 8px;
+            margin-bottom: 12px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .closed-port {
+            background-color: #fcd5d8;
+        }
+
+        .open-port {
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        #loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="mb-4">
+        <h1 class="text-2xl font-bold">Port Scanner</h1>
+        <div style="position: absolute; top: 0; right: 20px; color: #ffffff;">
+            <span id="datetime"></span>
+        </div>
+    </header>
+
+    <section class="container mx-auto">
+        <form class="mt-4" id="scanForm">
+            <div class="mb-4">
+                <label for="ip" class="block">Enter IP address:</label>
+                <input type="text" class="form-input" id="ip" name="ip" required="">
+            </div>
+            <div class="mb-4">
+                <label for="port" class="block">Select Option:</label>
+                <select id="port" name="port" class="form-select">
+                    <option value="all">Scan All Ports (ขั้นสูง)</option>
+                    <option value="specified">Scan-Port&OS</option>
+                    <option value="quick">Quick Scan (แบบเร็ว)</option>
+                </select>
+            </div>
+            <div class="mb-4" id="specifiedPort" style="display: none;">
+                <label for="specifiedPortInput" class="block">Specified Port:</label>
+                <input type="text" class="form-input" id="specifiedPortInput" name="specifiedPort">
+            </div>
+            <button type="submit" class="btn btn-primary">Scan Ports</button>
+            <button type="button" class="btn btn-secondary" onclick="clearResult()">Clear</button>
+        </form>
+        <div id="loading">
+            <p>โปรดรอแป๊ป...กำลัง Scan Port ให้อยู่</p>
+            <svg class="animate-spin h-5 w-5 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.963 7.963 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+            </svg>
+        </div>
+        <div id="result" class="mt-4"></div>
+    </section>
+
+    <script>
+        document.getElementById('port').addEventListener('change', function () {
+            const specifiedPortInput = document.getElementById('specifiedPort');
+            specifiedPortInput.style.display = this.value === 'specified' ? 'block' : 'none';
+        });
+
+        document.getElementById('scanForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const ip = document.getElementById('ip').value;
+            const scanType = document.getElementById('port').value;
+            const specifiedPort = document.getElementById('specifiedPortInput').value;
+
+            let body = `ip=${ip}&scanType=${scanType}`;
+            if (scanType === 'specified') {
+                body += `&specifiedPort=${specifiedPort}`;
+            }
+
+            const loadingDiv = document.getElementById('loading');
+
+            // Show loading icon and message
+            loadingDiv.style.display = 'block';
+
+            fetch('/scan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: body,
+            })
+                .then(response => response.text())
+                .then(result => {
+                    displayResult(result, scanType);
+                    // Hide loading icon and message
+                    loadingDiv.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('result').innerText = 'Error occurred';
+                    // Hide loading icon and message
+                    loadingDiv.style.display = 'none';
+                });
+        });
+
+        function displayResult(result, scanType) {
+            if (scanType === 'specified') {
+                const { portsTable, osTable } = parseNmapOutputSpecified(result);
+                document.getElementById('result').innerHTML = portsTable + osTable;
+            } else {
+                const table = parseNmapOutput(result);
+                document.getElementById('result').innerHTML = table;
+            }
+        }
+
+        function parseNmapOutput(output) {
+            const lines = output.split('\n');
+            let tableHTML = '<table>';
+            tableHTML += '<tr><th>IP</th><th>PORT</th><th>STATE</th><th>SERVICE</th></tr>';
+            let currentIp = '';
+
+            const redPorts = [7, 19, 20, 21, 22, 23, 25, 37, 53, 69, 79, 80, 110, 111, 135, 137, 138, 139, 445, 161, 512, 513, 514, 1433, 1434, 1723, 3389, 8080, 3306];
+
+            for (const line of lines) {
+                if (line.includes('Nmap scan report for ')) {
+                    currentIp = line.split('Nmap scan report for ')[1].trim();
+                }
+
+                if (line.includes('/tcp')) {
+                    const columns = line.trim().split(/\s+/);
+                    const port = parseInt(columns[0], 10);
+                    let rowStyle = '';
+                    let portStyle = '';
+
+                    if (redPorts.includes(port)) {
+                        portStyle = 'style="color: red;"';
+                    }
+
+                    if (columns[1] === 'open') {
+                        rowStyle = 'class="open-port"';
+                    } else if (columns[1] === 'closed') {
+                        rowStyle = 'class="closed-port"';
+                    }
+
+                    tableHTML += `<tr ${rowStyle}><td>${currentIp}</td><td ${portStyle}>${columns[0]}</td><td>${columns[1]}</td><td>${columns.slice(2).join(' ')}</td></tr>`;
+                }
+            }
+
+            tableHTML += '</table>';
+            return tableHTML;
+        }
+
+        function parseNmapOutputSpecified(output) {
+            const lines = output.split('\n');
+            let portsTableHTML = '<table>';
+            portsTableHTML += '<tr><th>IP</th><th>PORT</th><th>STATE</th><th>SERVICE</th></tr>';
+            let osTableHTML = '<table>';
+            osTableHTML += '<tr><th>IP</th><th>Running</th><th>OS CPE</th><th>OS Details</th></tr>';
+            let currentIp = '';
+            let osInfo = '';
+
+            for (const line of lines) {
+                if (line.includes('Nmap scan report for ')) {
+                    if (currentIp && osInfo) {
+                        osTableHTML += `<tr><td>${currentIp}</td><td>${osInfo.running}</td><td>${osInfo.osCPE}</td><td>${osInfo.osDetails}</td></tr>`;
+                    }
+                    currentIp = line.split('Nmap scan report for ')[1].trim();
+                    osInfo = { running: '', osCPE: '', osDetails: '' };
+                }
+
+                if (line.includes('/tcp')) {
+                    const columns = line.trim().split(/\s+/);
+                    portsTableHTML += `<tr><td>${currentIp}</td><td>${columns[0]}</td><td>${columns[1]}</td><td>${columns.slice(2).join(' ')}</td></tr>`;
+                }
+
+                if (line.startsWith('Running: ')) {
+                    osInfo.running = line.split('Running: ')[1].trim();
+                }
+
+                if (line.startsWith('OS CPE: ')) {
+                    osInfo.osCPE = line.split('OS CPE: ')[1].trim();
+                }
+
+                if (line.startsWith('OS details: ')) {
+                    osInfo.osDetails = line.split('OS details: ')[1].trim();
+                }
+            }
+
+            if (currentIp && osInfo) {
+                osTableHTML += `<tr><td>${currentIp}</td><td>${osInfo.running}</td><td>${osInfo.osCPE}</td><td>${osInfo.osDetails}</td></tr>`;
+            }
+
+            portsTableHTML += '</table>';
+            osTableHTML += '</table>';
+
+            return { portsTable: portsTableHTML, osTable: osTableHTML };
+        }
+
+        function clearResult() {
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const datetimeElement = document.getElementById('datetime');
+            datetimeElement.textContent = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+        }
+
+        // Update datetime initially
+        updateDateTime();
+
+        // Update datetime every second
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+
+</html>
