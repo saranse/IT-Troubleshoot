@@ -1,0 +1,28 @@
+2025-05-02 22:10:45,044 - INFO - Loaded 1 domains and 3 keywords
+2025-05-02 22:10:45,833 - INFO - Successfully sent Telegram message
+2025-05-02 22:10:45,834 - INFO - Processing pair 1/3: www.nejazzwinefest.org with keyword 'ËÇÂ'
+2025-05-02 22:10:45,839 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:10:45,841 - INFO - Searching Google: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:10:50,238 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:10:52,424 - INFO - Searching Bing: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:10:57,116 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:10:57,117 - INFO - Processing pair 2/3: www.nejazzwinefest.org with keyword 'â»ê'
+2025-05-02 22:10:57,124 - INFO - Waiting for 5 seconds before next request...
+2025-05-02 22:11:02,128 - INFO - Processing domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:11:02,129 - INFO - Searching Google: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:11:05,974 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:11:08,179 - INFO - Searching Bing: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:11:12,812 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:11:12,812 - INFO - Processing pair 3/3: www.nejazzwinefest.org with keyword '100%'
+2025-05-02 22:11:12,819 - INFO - Waiting for 3 seconds before next request...
+2025-05-02 22:11:15,828 - INFO - Processing domain: www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:11:15,828 - INFO - Searching Google: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:11:20,678 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:11:22,783 - INFO - Searching Bing: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:11:27,547 - INFO - Found 1 preliminary results for www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:11:27,547 - INFO - Fetching content from: https://www.nejazzwinefest.org/
+2025-05-02 22:11:35,080 - INFO - Confirmed 1 results with keyword '100%' for domain: www.nejazzwinefest.org
+2025-05-02 22:11:35,902 - INFO - Successfully sent Telegram message
+2025-05-02 22:11:37,785 - INFO - Successfully sent Telegram message
+2025-05-02 22:11:38,588 - INFO - Successfully sent Telegram message
+2025-05-02 22:11:38,589 - INFO - Scan completed. Found 1 gambling-related matches.

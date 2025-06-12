@@ -1,0 +1,71 @@
+2025-05-02 22:44:01,785 - INFO - Loaded 1 domains and 5 keywords
+2025-05-02 22:44:02,617 - INFO - Successfully sent Telegram message
+2025-05-02 22:44:05,637 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ÊÅçÍµ
+2025-05-02 22:44:06,602 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:44:06,603 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:44:07,118 - INFO - Searching Google: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:44:07,122 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:44:13,048 - INFO - Searching Bing: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:44:13,048 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:44:20,959 - INFO - Found 1 unique results across all search engines for www.nejazzwinefest.org with keyword ÊÅçÍµ
+2025-05-02 22:44:20,959 - INFO - Found 1 preliminary results for www.nejazzwinefest.org with keyword: ÊÅçÍµ
+2025-05-02 22:44:20,962 - INFO - Fetching content from: https://www.nejazzwinefest.org/
+2025-05-02 22:44:26,490 - INFO - Found keyword 'ÊÅçÍµ' with 10 matches
+2025-05-02 22:44:26,490 - INFO - Confirmed result for URL: https://www.nejazzwinefest.org/ with keywords: ['ÊÅçÍµ']
+2025-05-02 22:44:26,493 - INFO - Confirmed 1 results with keyword 'ÊÅçÍµ' for domain: www.nejazzwinefest.org
+2025-05-02 22:44:27,301 - INFO - Successfully sent Telegram message
+2025-05-02 22:44:28,321 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:44:28,948 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:44:28,949 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:44:29,792 - INFO - Searching Google: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:44:29,792 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:44:35,255 - INFO - Searching Bing: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:44:35,256 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:44:43,200 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword ËÇÂ
+2025-05-02 22:44:43,200 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword ËÇÂ, trying Google again with different settings
+2025-05-02 22:44:45,207 - INFO - Searching Google: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:44:45,207 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:44:52,537 - INFO - Fallback search added 0 more results
+2025-05-02 22:44:52,537 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:44:55,546 - INFO - Processing domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:44:56,077 - INFO - Searching Google: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:44:56,078 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:44:56,577 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:44:56,577 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:45:03,031 - INFO - Searching Bing: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:45:03,031 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:45:11,139 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword â»ê
+2025-05-02 22:45:11,140 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword â»ê, trying Google again with different settings
+2025-05-02 22:45:13,143 - INFO - Searching Google: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:45:13,143 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:45:19,930 - INFO - Fallback search added 0 more results
+2025-05-02 22:45:19,930 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:45:22,940 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ¾¹Ñ¹
+2025-05-02 22:45:23,534 - INFO - Searching Google: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:45:23,534 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:45:24,362 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:45:24,362 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:45:30,729 - INFO - Searching Bing: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:45:30,730 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:45:38,773 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword ¾¹Ñ¹
+2025-05-02 22:45:38,774 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword ¾¹Ñ¹, trying Google again with different settings
+2025-05-02 22:45:40,783 - INFO - Searching Google: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:45:40,783 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:45:48,487 - INFO - Fallback search added 0 more results
+2025-05-02 22:45:48,487 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: ¾¹Ñ¹
+2025-05-02 22:45:49,493 - INFO - Processing domain: www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:45:50,134 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:45:50,134 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:45:50,946 - INFO - Searching Google: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:45:50,946 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:45:56,677 - INFO - Searching Bing: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:45:56,678 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:46:05,698 - INFO - Found 1 unique results across all search engines for www.nejazzwinefest.org with keyword 100%
+2025-05-02 22:46:05,699 - INFO - Found 1 preliminary results for www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:46:05,749 - INFO - Found keyword '100%' with 8 matches
+2025-05-02 22:46:05,749 - INFO - Confirmed result for URL: https://www.nejazzwinefest.org/ with keywords: ['100%']
+2025-05-02 22:46:05,752 - INFO - Confirmed 1 results with keyword '100%' for domain: www.nejazzwinefest.org
+2025-05-02 22:46:06,689 - INFO - Successfully sent Telegram message
+2025-05-02 22:46:07,549 - INFO - Successfully sent Telegram message
+2025-05-02 22:46:08,452 - INFO - Successfully sent Telegram message
+2025-05-02 22:46:08,453 - INFO - Scan completed in 125.77 seconds. Found 2 gambling-related matches.

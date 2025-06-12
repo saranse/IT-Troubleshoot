@@ -1,0 +1,28 @@
+[
+  {
+    "title": "การพยาบาลผูป่วยสูงอายุกระดูกหนาแขงหักที่ไดรับการรักษาโดยการใสเฝือก …",
+    "link": "https://yasothon.moph.go.th/ssjyasothon/FrontEnd/report_AcademicWork_Read.php?racd_id=ODY=&racdf_id=OTI=",
+    "snippet": "mmHg SpO2=100% Pain score 7/10 -good conscious E4V5M6 vital sign T=37 C PR=100 /min RR=20 /min Bp=113/84 mmHg SpO2=100% Pain score=7/10 มีอาการปวดบวมที่ขาขวา การตรวจ ร่างกาย  …",
+    "status": "found",
+    "url": "https://yasothon.moph.go.th/ssjyasothon/FrontEnd/report_AcademicWork_Read.php?racd_id=ODY=&racdf_id=OTI=",
+    "matches": {
+      "100%": [
+        "...found in search result snippet: mmhg spo2=100% pain score 7/10 -good conscious e4v5m6 vital sign t=37 c pr=100 /min rr=20 /min bp=113/84 mmhg spo2=100% pain score=7/10 มีอาการปวดบวมที่ขาขวา การตรวจ ร่างกาย  …..."
+      ]
+    },
+    "total_matches": 1
+  },
+  {
+    "title": "ผลของการพัฒนาเภสัชกรรมทางไกลในผู้ป่วยเบาหวานโรงพยาบาลส่งเสริมสุขภาพต …",
+    "link": "https://www.yasothon.moph.go.th/ssjyaso/FrontEnd/report_AcademicWork_Read.php?racd_id=29&racdf_id=35",
+    "snippet": "ผลการจ่ายยาผ่านระบบ video conference กลุ่มตัวอย่างสามารถใช้ยาได้อย่างถูกต้อง คิดเป็นร้อยละ 100 และ",
+    "status": "found",
+    "url": "https://www.yasothon.moph.go.th/ssjyaso/FrontEnd/report_AcademicWork_Read.php?racd_id=29&racdf_id=35",
+    "matches": {
+      "100%": [
+        "...found in search result snippet: ผลการจ่ายยาผ่านระบบ video conference กลุ่มตัวอย่างสามารถใช้ยาได้อย่างถูกต้อง คิดเป็นร้อยละ 100 และ..."
+      ]
+    },
+    "total_matches": 1
+  }
+]

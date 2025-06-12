@@ -1,0 +1,30 @@
+[
+  {
+    "title": "วิสัญญี : สภาวะการรับมือ COVID-19 ในหน่วยงานวิสัญญี โรงพยาบาล ...",
+    "link": "https://ayh.moph.go.th/ayh/index.php/ha-home/ha-vision?layout=edit&id=5593",
+    "snippet": "การเปลี่ยนแปลงที่เกิดขึ้น เจ้าหน้าที่ 100% สามารถใส่-ถอดชุด PPE ได้ถูกต้อง, เจ้าหน้าที่มีความมั่นใจเมื่อพบสถานการณ์จริง มีการ ...",
+    "status": "found",
+    "url": "https://ayh.moph.go.th/ayh/index.php/ha-home/ha-vision?layout=edit&id=5593",
+    "matches": {
+      "100%": [
+        "11 การเปลยนแปลงทเกดขน เจาหนาท 100 สามารถใสถอดชด ppe ไดถกตอง เจา",
+        "11 การเปลยนแปลงทเกดขน เจาหนาท 100 สามารถใสถอดชด ppe ไดถกตอง เจา"
+      ]
+    },
+    "total_matches": 2
+  },
+  {
+    "title": "งบทดลองหน่วยงานประจำเดือน",
+    "link": "https://ayh.moph.go.th/ayh/index.php/2015-05-27-02-47-46?format=feed&type=rss",
+    "snippet": "{edocs}finance/Trial-Balance/15-08-2567.pdf,100%,860,link{/edocs}",
+    "status": "found",
+    "url": "https://ayh.moph.go.th/ayh/index.php/2015-05-27-02-47-46?format=feed&type=rss",
+    "matches": {
+      "100%": [
+        "etrialbalancegfmis 31032568pdf100860linkedocsdivdivdescription ",
+        "albalancetrial balance 2567pdf100860linkedocsdivdivdescription "
+      ]
+    },
+    "total_matches": 2
+  }
+]

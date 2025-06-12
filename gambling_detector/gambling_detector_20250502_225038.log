@@ -1,0 +1,138 @@
+2025-05-02 22:50:38,637 - INFO - Loaded 2 domains and 5 keywords
+2025-05-02 22:50:39,479 - INFO - Successfully sent Telegram message
+2025-05-02 22:50:42,489 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ÊÅçÍµ
+2025-05-02 22:50:43,333 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:50:43,334 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:50:43,471 - INFO - Searching Google: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:50:43,475 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:50:50,004 - INFO - Searching Bing: site:www.nejazzwinefest.org "ÊÅçÍµ"
+2025-05-02 22:50:50,005 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:50:58,320 - INFO - Found 1 unique results across all search engines for www.nejazzwinefest.org with keyword ÊÅçÍµ
+2025-05-02 22:50:58,320 - INFO - Found 1 preliminary results for www.nejazzwinefest.org with keyword: ÊÅçÍµ
+2025-05-02 22:50:58,323 - INFO - Fetching content from: https://www.nejazzwinefest.org/
+2025-05-02 22:51:03,850 - INFO - Found keyword 'ÊÅçÍµ' with 10 matches
+2025-05-02 22:51:03,850 - INFO - Confirmed result for URL: https://www.nejazzwinefest.org/ with keywords: ['ÊÅçÍµ']
+2025-05-02 22:51:03,853 - INFO - Confirmed 1 results with keyword 'ÊÅçÍµ' for domain: www.nejazzwinefest.org
+2025-05-02 22:51:04,678 - INFO - Successfully sent Telegram message
+2025-05-02 22:51:05,693 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:51:06,365 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:51:06,366 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:51:06,974 - INFO - Searching Google: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:51:06,975 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:51:12,732 - INFO - Searching Bing: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:51:12,733 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:51:20,519 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword ËÇÂ
+2025-05-02 22:51:20,519 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword ËÇÂ, trying Google again with different settings
+2025-05-02 22:51:22,533 - INFO - Searching Google: site:www.nejazzwinefest.org "ËÇÂ"
+2025-05-02 22:51:22,533 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:51:30,145 - INFO - Fallback search added 0 more results
+2025-05-02 22:51:30,146 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: ËÇÂ
+2025-05-02 22:51:32,150 - INFO - Processing domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:51:32,806 - INFO - Searching Google: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:51:32,807 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:51:33,462 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:51:33,463 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:51:39,818 - INFO - Searching Bing: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:51:39,819 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:51:48,301 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword â»ê
+2025-05-02 22:51:48,301 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword â»ê, trying Google again with different settings
+2025-05-02 22:51:50,316 - INFO - Searching Google: site:www.nejazzwinefest.org "â»ê"
+2025-05-02 22:51:50,317 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:51:57,634 - INFO - Fallback search added 0 more results
+2025-05-02 22:51:57,634 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: â»ê
+2025-05-02 22:51:59,642 - INFO - Processing domain: www.nejazzwinefest.org with keyword: ¾¹Ñ¹
+2025-05-02 22:52:00,439 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:52:00,439 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:52:00,986 - INFO - Searching Google: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:52:00,986 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:52:06,946 - INFO - Searching Bing: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:52:06,946 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:52:15,804 - INFO - Found 0 unique results across all search engines for www.nejazzwinefest.org with keyword ¾¹Ñ¹
+2025-05-02 22:52:15,805 - WARNING - No results found in first pass for www.nejazzwinefest.org with keyword ¾¹Ñ¹, trying Google again with different settings
+2025-05-02 22:52:17,821 - INFO - Searching Google: site:www.nejazzwinefest.org "¾¹Ñ¹"
+2025-05-02 22:52:17,822 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:52:25,154 - INFO - Fallback search added 0 more results
+2025-05-02 22:52:25,154 - INFO - No search results found for domain: www.nejazzwinefest.org with keyword: ¾¹Ñ¹
+2025-05-02 22:52:28,173 - INFO - Processing domain: www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:52:29,032 - INFO - Searching Google: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:52:29,033 - INFO - Fetching: https://www.google.com/search?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:52:29,314 - INFO - Searching DuckDuckGo: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:52:29,314 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:52:35,866 - INFO - Searching Bing: site:www.nejazzwinefest.org "100%"
+2025-05-02 22:52:35,867 - INFO - Fetching: https://www.bing.com/search?q=site%3Awww.nejazzwinefest.org%20%22100%25%22
+2025-05-02 22:52:44,545 - INFO - Found 1 unique results across all search engines for www.nejazzwinefest.org with keyword 100%
+2025-05-02 22:52:44,546 - INFO - Found 1 preliminary results for www.nejazzwinefest.org with keyword: 100%
+2025-05-02 22:52:44,581 - INFO - Found keyword '100%' with 7 matches
+2025-05-02 22:52:44,582 - INFO - Confirmed result for URL: https://www.nejazzwinefest.org/ with keywords: ['100%']
+2025-05-02 22:52:44,583 - INFO - Confirmed 1 results with keyword '100%' for domain: www.nejazzwinefest.org
+2025-05-02 22:52:45,400 - INFO - Successfully sent Telegram message
+2025-05-02 22:52:46,216 - INFO - Successfully sent Telegram message
+2025-05-02 22:52:47,410 - INFO - Processing domain: pmhos.moph.go.th with keyword: ÊÅçÍµ
+2025-05-02 22:52:48,176 - INFO - Searching Google: site:pmhos.moph.go.th "ÊÅçÍµ"
+2025-05-02 22:52:48,176 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:52:48,473 - INFO - Searching DuckDuckGo: site:pmhos.moph.go.th "ÊÅçÍµ"
+2025-05-02 22:52:48,473 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:52:55,192 - INFO - Searching Bing: site:pmhos.moph.go.th "ÊÅçÍµ"
+2025-05-02 22:52:55,193 - INFO - Fetching: https://www.bing.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:53:03,383 - INFO - Found 0 unique results across all search engines for pmhos.moph.go.th with keyword ÊÅçÍµ
+2025-05-02 22:53:03,384 - WARNING - No results found in first pass for pmhos.moph.go.th with keyword ÊÅçÍµ, trying Google again with different settings
+2025-05-02 22:53:05,403 - INFO - Searching Google: site:pmhos.moph.go.th "ÊÅçÍµ"
+2025-05-02 22:53:05,403 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AA%E0%B8%A5%E0%B9%87%E0%B8%AD%E0%B8%95%22
+2025-05-02 22:53:12,956 - INFO - Fallback search added 0 more results
+2025-05-02 22:53:12,956 - INFO - No search results found for domain: pmhos.moph.go.th with keyword: ÊÅçÍµ
+2025-05-02 22:53:14,961 - INFO - Processing domain: pmhos.moph.go.th with keyword: ËÇÂ
+2025-05-02 22:53:15,555 - INFO - Searching DuckDuckGo: site:pmhos.moph.go.th "ËÇÂ"
+2025-05-02 22:53:15,555 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:53:15,618 - INFO - Searching Google: site:pmhos.moph.go.th "ËÇÂ"
+2025-05-02 22:53:15,618 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:53:22,504 - INFO - Searching Bing: site:pmhos.moph.go.th "ËÇÂ"
+2025-05-02 22:53:22,505 - INFO - Fetching: https://www.bing.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%AB%E0%B8%A7%E0%B8%A2%22
+2025-05-02 22:53:44,467 - INFO - Found 1 unique results across all search engines for pmhos.moph.go.th with keyword ËÇÂ
+2025-05-02 22:53:44,468 - INFO - Found 1 preliminary results for pmhos.moph.go.th with keyword: ËÇÂ
+2025-05-02 22:53:44,470 - INFO - Fetching content from: https://pmhos.moph.go.th/news_show?id=8179
+2025-05-02 22:53:59,250 - INFO - Found keyword 'ËÇÂ' with 2 matches
+2025-05-02 22:53:59,251 - INFO - Confirmed result for URL: https://pmhos.moph.go.th/news_show?id=8179 with keywords: ['ËÇÂ']
+2025-05-02 22:53:59,255 - INFO - Confirmed 1 results with keyword 'ËÇÂ' for domain: pmhos.moph.go.th
+2025-05-02 22:54:00,081 - INFO - Successfully sent Telegram message
+2025-05-02 22:54:01,096 - INFO - Processing domain: pmhos.moph.go.th with keyword: â»ê
+2025-05-02 22:54:01,799 - INFO - Searching Google: site:pmhos.moph.go.th "â»ê"
+2025-05-02 22:54:01,800 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:54:02,002 - INFO - Searching DuckDuckGo: site:pmhos.moph.go.th "â»ê"
+2025-05-02 22:54:02,003 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Apmhos.moph.go.th%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:54:08,196 - INFO - Searching Bing: site:pmhos.moph.go.th "â»ê"
+2025-05-02 22:54:08,197 - INFO - Fetching: https://www.bing.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:54:16,818 - INFO - Found 0 unique results across all search engines for pmhos.moph.go.th with keyword â»ê
+2025-05-02 22:54:16,818 - WARNING - No results found in first pass for pmhos.moph.go.th with keyword â»ê, trying Google again with different settings
+2025-05-02 22:54:18,823 - INFO - Searching Google: site:pmhos.moph.go.th "â»ê"
+2025-05-02 22:54:18,823 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B9%82%E0%B8%9B%E0%B9%8A%22
+2025-05-02 22:54:25,550 - INFO - Fallback search added 0 more results
+2025-05-02 22:54:25,550 - INFO - No search results found for domain: pmhos.moph.go.th with keyword: â»ê
+2025-05-02 22:54:26,554 - INFO - Processing domain: pmhos.moph.go.th with keyword: ¾¹Ñ¹
+2025-05-02 22:54:27,445 - INFO - Searching DuckDuckGo: site:pmhos.moph.go.th "¾¹Ñ¹"
+2025-05-02 22:54:27,446 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Apmhos.moph.go.th%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:54:27,632 - INFO - Searching Google: site:pmhos.moph.go.th "¾¹Ñ¹"
+2025-05-02 22:54:27,632 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:54:33,797 - INFO - Searching Bing: site:pmhos.moph.go.th "¾¹Ñ¹"
+2025-05-02 22:54:33,797 - INFO - Fetching: https://www.bing.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:54:42,312 - INFO - Found 0 unique results across all search engines for pmhos.moph.go.th with keyword ¾¹Ñ¹
+2025-05-02 22:54:42,312 - WARNING - No results found in first pass for pmhos.moph.go.th with keyword ¾¹Ñ¹, trying Google again with different settings
+2025-05-02 22:54:44,315 - INFO - Searching Google: site:pmhos.moph.go.th "¾¹Ñ¹"
+2025-05-02 22:54:44,316 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22%E0%B8%9E%E0%B8%99%E0%B8%B1%E0%B8%99%22
+2025-05-02 22:54:51,040 - INFO - Fallback search added 0 more results
+2025-05-02 22:54:51,040 - INFO - No search results found for domain: pmhos.moph.go.th with keyword: ¾¹Ñ¹
+2025-05-02 22:54:53,049 - INFO - Processing domain: pmhos.moph.go.th with keyword: 100%
+2025-05-02 22:54:53,846 - INFO - Searching Google: site:pmhos.moph.go.th "100%"
+2025-05-02 22:54:53,849 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22100%25%22
+2025-05-02 22:54:54,237 - INFO - Searching DuckDuckGo: site:pmhos.moph.go.th "100%"
+2025-05-02 22:54:54,237 - INFO - Fetching: https://html.duckduckgo.com/html/?q=site%3Apmhos.moph.go.th%20%22100%25%22
+2025-05-02 22:55:00,774 - INFO - Searching Bing: site:pmhos.moph.go.th "100%"
+2025-05-02 22:55:00,774 - INFO - Fetching: https://www.bing.com/search?q=site%3Apmhos.moph.go.th%20%22100%25%22
+2025-05-02 22:55:08,675 - INFO - Found 0 unique results across all search engines for pmhos.moph.go.th with keyword 100%
+2025-05-02 22:55:08,675 - WARNING - No results found in first pass for pmhos.moph.go.th with keyword 100%, trying Google again with different settings
+2025-05-02 22:55:10,680 - INFO - Searching Google: site:pmhos.moph.go.th "100%"
+2025-05-02 22:55:10,681 - INFO - Fetching: https://www.google.com/search?q=site%3Apmhos.moph.go.th%20%22100%25%22
+2025-05-02 22:55:17,453 - INFO - Fallback search added 0 more results
+2025-05-02 22:55:17,454 - INFO - No search results found for domain: pmhos.moph.go.th with keyword: 100%
+2025-05-02 22:55:18,265 - INFO - Successfully sent Telegram message
+2025-05-02 22:55:19,093 - INFO - Successfully sent Telegram message
+2025-05-02 22:55:19,094 - INFO - Scan completed in 279.63 seconds. Found 3 gambling-related matches.

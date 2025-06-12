@@ -1,0 +1,20 @@
+[
+  {
+    "title": "ตารางภาระกิจผู้บริหารสำนักงานสาธารณสุขจังหวัดมุกดาหาร",
+    "link": "https://mdo.moph.go.th/computer/calendar/month.php",
+    "snippet": "(ออกพื้นที่) ประเมินส้วมสาธารณะ (ส้วม has) ตามประกาศนโยบาย ส้วม has 100%",
+    "status": "found",
+    "url": "https://mdo.moph.go.th/computer/calendar/month.php",
+    "matches": {
+      "100%": [
+        "โรคแอนแทรกซ จงหวดมกดาหาร เวลา 1000 รายละเอยด zoom meeting ประชม",
+        "คกคามประเดนปญหาระดบตำบลฯ เวลา 1000 รายละเอยด zoom meeting ประชม",
+        "านในการใหบรการสขภาพปฐมภม เวลา 1000 รายละเอยด zoom meeting ประชม",
+        "านในการใหบรการสขภาพปฐมภม เวลา 1000 รายละเอยด ประชมคณะกรรมการพจา",
+        "โครงการ kickoff workshop เวลา 1000 รายละเอยด zoom meeting ประชม",
+        "นกจกรรม to be number one เวลา 1000 รายละเอยด zoom meeting ประชม"
+      ]
+    },
+    "total_matches": 6
+  }
+]

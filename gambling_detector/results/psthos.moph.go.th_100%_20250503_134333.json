@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Clinical Tracer Highlight 2 - Ministry of Public Health",
+    "link": "https://psthos.moph.go.th/paper/CTL/CTLDHF.pdf",
+    "snippet": "ร้อยละการปฏิบัติตาม cpg ส่วนการดูแลรักษา 100% 89.50 95.83 91.46 93.75 ร้อยละของผู้ป่วยที่ได้รับการรายงานโรคภายใน 24 ชั่วโมง 100% 100 100 100 100",
+    "status": "found",
+    "url": "https://psthos.moph.go.th/paper/CTL/CTLDHF.pdf",
+    "matches": {
+      "100%": [
+        "...found in search result snippet: ร้อยละการปฏิบัติตาม cpg ส่วนการดูแลรักษา 100% 89.50 95.83 91.46 93.75 ร้อยละของผู้ป่วยที่ได้รับการรายงานโรคภายใน 24 ชั่วโมง 100% 100 100 100 100..."
+      ]
+    },
+    "total_matches": 1
+  },
+  {
+    "title": "รายงานการประเมินตนเอง (SAR 2018) รพ.ปางศิลาทอง",
+    "link": "https://psthos.moph.go.th/paper/SAR2018/II-4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B7%E0%B9%89%E0%B8%AD.pdf",
+    "snippet": "บุคลากรกลุ่มเสี่ยงได้รับวัคซีน Hepatitis ไข้หวัดใหญ่ ครบ 100 % โดย IC จะด าเนินงานร่วมกับ ENV และฝ่ายสุขาภิบาล",
+    "status": "found",
+    "url": "https://psthos.moph.go.th/paper/SAR2018/II-4%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B7%E0%B9%89%E0%B8%AD.pdf",
+    "matches": {
+      "100%": [
+        "...found in search result snippet: บุคลากรกลุ่มเสี่ยงได้รับวัคซีน hepatitis ไข้หวัดใหญ่ ครบ 100 % โดย ic จะด าเนินงานร่วมกับ env และฝ่ายสุขาภิบาล..."
+      ]
+    },
+    "total_matches": 1
+  }
+]
