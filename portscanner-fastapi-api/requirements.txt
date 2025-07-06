@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+jinja2
+aiofiles
+python-multipart
+aiosqlite
+reportlab  # สำหรับ Export PDF
+psutil     # สำหรับตรวจสอบ Performance
