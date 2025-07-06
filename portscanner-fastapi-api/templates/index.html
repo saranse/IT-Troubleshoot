@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetGuardian Pro | เครื่องมือสแกนเครือข่าย</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #059669;
+            --gold: #d97706;
+            --success: #10b981; /* Brighter green for open */
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --bg-input: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-light: #e2e8f0;
+            --border-main: #cbd5e1;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark mode variables */
+        body.dark-mode {
+            --bg-main: #1e293b;
+            --bg-card: #2d3748;
+            --bg-secondary: #4a5568;
+            --bg-input: #4a5568;
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e1;
+            --text-muted: #a0aec0;
+            --border-light: #4a5568;
+            --border-main: #64748b;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* General layout */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Thai', 'Sarabun', 'Kanit', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .main-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            background: var(--bg-card);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .content-area {
+            flex-grow: 1;
+            padding: 2rem;
+            background: var(--bg-main);
+        }
+        .header {
+            background: none;
+            box-shadow: none;
+            margin-bottom: 2rem;
+            padding: 0;
+            border: none;
+        }
+        .header-title h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .logo img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background: none;
+            padding: 0;
+            box-shadow: none;
+            margin-bottom: 2rem;
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .nav-link:hover {
+            background-color: var(--bg-secondary);
+            color: var(--primary);
+        }
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        .nav-link i {
+            font-size: 1.5rem;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+            color: var(--text-primary);
+        }
+        .card-header i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        .card-body {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-main);
+            border-radius: 8px;
+            background-color: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(var(--primary-light), 0.3);
+            outline: none;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-danger {
+            background-color: var(--danger);
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-secondary { /* Added for Export Buttons */
+            background-color: var(--text-secondary);
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            box-shadow: var(--shadow-sm);
+        }
+        .filter-buttons .btn {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-main);
+        }
+        .filter-buttons .btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .filter-buttons .btn:hover:not(.active) {
+            background-color: var(--bg-input);
+        }
+
+        .mr-2 {
+            margin-right: 0.75rem;
+        }
+        .mt-4 { margin-top: 2rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .text-center { text-align: center; }
+        .text-secondary { color: var(--text-secondary); }
+        .text-muted { color: var(--text-muted); }
+        .text-primary { color: var(--primary); }
+        .text-danger { color: var(--danger); }
+        .hidden { display: none !important; }
+
+        /* Results area */
+        .results-container {
+            margin-top: 2rem;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            max-height: 500px; /* Limit height */
+            overflow-y: auto; /* Enable scrolling */
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-main);
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .port-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .port-badge.open { background-color: var(--success); } /* Green for open */
+        .port-badge.closed { background-color: var(--danger); }
+        .port-badge.filtered { background-color: var(--warning); }
+        .port-badge.error { background-color: var(--text-muted); } /* Grey for error */
+
+        .risk-port {
+            animation: pulse-red 1s infinite alternate;
+            box-shadow: 0 0 10px var(--danger); /* Add a glow */
+        }
+
+        @keyframes pulse-red {
+            0% { background-color: var(--danger); }
+            100% { background-color: #ff6666; }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Username Modal */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 1.5rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+            .logo {
+                margin-bottom: 2rem;
+            }
+            .nav-links {
+                flex-direction: row;
+                justify-content: space-around;
+                margin-bottom: 1.5rem;
+            }
+            .nav-link {
+                flex-grow: 1;
+                text-align: center;
+                padding: 0.75rem;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+            }
+            .nav-link i {
+                font-size: 1.2rem;
+            }
+            .content-area {
+                padding: 1.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+            .system-info {
+                display: none; /* Hide system info on smaller screens */
+            }
+        }
+
+        /* Hide specific elements on print */
+        @media print {
+            .sidebar, .btn, .form-group, .filter-buttons, .system-info {
+                display: none !important;
+            }
+            body {
+                background-color: #fff;
+                color: #000;
+                font-size: 12pt;
+            }
+            .content-area {
+                padding: 1rem;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            .card-header {
+                border-bottom: 1px solid #ccc;
+            }
+            .result-item {
+                border-bottom: 1px dashed #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/static/logo.png" alt="NetGuardian Pro Logo">
+                <h3>NetGuardian Pro</h3>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" id="scannerTab" onclick="showPage('scanner')">
+                    <i class="mdi mdi-radar"></i> สแกนพอร์ต
+                </a>
+                <a href="#" class="nav-link" id="historyTab" onclick="showPage('history')">
+                    <i class="mdi mdi-history"></i> ประวัติการสแกน
+                </a>
+            </nav>
+
+            <div class="system-info card">
+                <div class="info-item">
+                    <i class="mdi mdi-account-circle"></i>
+                    <span id="displayUsername">ผู้ใช้: {{ username if username else 'ไม่ได้ตั้งค่า' }}</span>
+                </div>
+                <div class="info-item">
+                    <i class="mdi mdi-clock-outline"></i>
+                    <span id="currentTime"></span>
+                </div>
+                <div class="info-item">
+                    <i class="mdi mdi-check-circle"></i>
+                    <span id="systemStatus">สถานะ: <span style="color: var(--success);">ออนไลน์</span></span>
+                </div>
+                <div class="info-item">
+                    <i class="mdi mdi-gauge"></i>
+                    <span id="systemPerformance">ประสิทธิภาพ: โหลด...</span>
+                </div>
+                <div class="info-item mt-3">
+                    <button class="btn btn-primary" id="darkModeToggle">
+                        <i class="mdi mdi-brightness-4"></i> สลับโหมด
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div id="scannerPage">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="mdi mdi-radar"></i>
+                        <h2>สแกนพอร์ต</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="scanForm">
+                            <div class="form-group">
+                                <label for="target">เป้าหมาย (IP, Domain หรือ Subnet เช่น 192.168.1.0/24)</label>
+                                <input type="text" id="target" name="target" class="form-control" placeholder="เช่น 192.168.1.1 หรือ example.com หรือ 192.168.1.0/24" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ประเภทการสแกน</label>
+                                <div class="filter-buttons">
+                                    <button type="button" class="btn active" data-scan-type="risk_ports" id="riskPortsBtn">
+                                        <i class="mdi mdi-alert-circle"></i> พอร์ตความเสี่ยง
+                                    </button>
+                                    <button type="button" class="btn" data-scan-type="custom_range" id="customPortsBtn">
+                                        <i class="mdi mdi-cog"></i> กำหนดเอง
+                                    </button>
+                                </div>
+                                <input type="hidden" id="scanType" name="scan_type" value="risk_ports">
+                            </div>
+                            <div class="form-group hidden" id="customPortsGroup">
+                                <label for="customPorts">พอร์ตที่ต้องการสแกน (เช่น 80,443,1000-2000)</label>
+                                <input type="text" id="customPorts" name="custom_ports" class="form-control" placeholder="เช่น 80,443,1000-2000">
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span id="scanButtonText"><i class="mdi mdi-play"></i> เริ่มสแกน</span>
+                                <span class="spinner hidden" id="scanSpinner"></span>
+                            </button>
+                        </form>
+
+                        <div id="scanResults" class="results-container mt-4 hidden">
+                            <h3 class="text-primary">ผลการสแกน (<span id="elapsedTime"></span>)</h3>
+                            <div id="resultsList">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="historyPage" class="hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="mdi mdi-history"></i>
+                        <h2>ประวัติการสแกน</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="historyContent">
+                            </div>
+                        <div class="mt-4 text-center">
+                            <button onclick="exportLogs('csv')" class="btn btn-secondary mr-2">
+                                <i class="mdi mdi-download"></i> ดาวน์โหลด CSV
+                            </button>
+                            <button onclick="exportLogs('pdf')" class="btn btn-secondary">
+                                <i class="mdi mdi-file-pdf-box"></i> ดาวน์โหลด PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="usernameModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>ตั้งชื่อผู้ใช้ของคุณ</h2>
+            <form id="usernameForm">
+                <div class="form-group">
+                    <input type="text" id="usernameInput" class="form-control" placeholder="ชื่อผู้ใช้" required>
+                </div>
+                <button type="submit" class="btn btn-primary">บันทึก</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Use the RISK_PORTS passed from the server
+        const RISK_PORTS = {{ RISK_PORTS | tojson }};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applySavedTheme();
+            checkUsername();
+            updateTime();
+            setInterval(updateTime, 1000);
+            fetchPerformanceStatus();
+            setInterval(fetchPerformanceStatus, 5000); // Update performance every 5 seconds
+
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+
+            document.getElementById('scanForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const target = document.getElementById('target').value;
+                const scanType = document.getElementById('scanType').value;
+                const customPorts = document.getElementById('customPorts').value;
+                const scanButton = document.getElementById('scanButtonText');
+                const scanSpinner = document.getElementById('scanSpinner');
+                const scanResultsDiv = document.getElementById('scanResults');
+                const resultsList = document.getElementById('resultsList');
+                const elapsedTimeSpan = document.getElementById('elapsedTime');
+
+                scanButton.classList.add('hidden');
+                scanSpinner.classList.remove('hidden');
+                scanResultsDiv.classList.add('hidden'); // Hide previous results
+                resultsList.innerHTML = ''; // Clear previous results
+                elapsedTimeSpan.textContent = ''; // Clear elapsed time
+
+                const formData = new FormData();
+                formData.append('target', target);
+                formData.append('scan_type', scanType);
+                formData.append('custom_ports', customPorts);
+
+                try {
+                    const response = await fetch('/api/scan', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await response.json();
+
+                    scanButton.classList.remove('hidden');
+                    scanSpinner.classList.add('hidden');
+                    scanResultsDiv.classList.remove('hidden');
+
+                    if (response.ok) {
+                        if (data.results && data.results.length > 0) {
+                            elapsedTimeSpan.textContent = `ใช้เวลา: ${data.elapsed} วินาที`;
+                            data.results.forEach(result => {
+                                const isRisk = RISK_PORTS.includes(result.port);
+                                const resultHtml = `
+                                    <div class="result-item">
+                                        <div>
+                                            <strong>${result.ip_address}:${result.port}</strong>
+                                            <div class="text-muted">บริการ: ${result.service}</div>
+                                        </div>
+                                        <span class="port-badge ${result.state} ${isRisk && result.state === 'open' ? 'risk-port' : ''}">${result.state}</span>
+                                    </div>
+                                `;
+                                resultsList.insertAdjacentHTML('beforeend', resultHtml);
+                            });
+                        } else {
+                            resultsList.innerHTML = '<div class="text-center text-muted">ไม่พบพอร์ตที่เปิด</div>';
+                        }
+                    } else {
+                        resultsList.innerHTML = `<div class="text-center text-danger">ข้อผิดพลาด: ${data.error || 'การสแกนล้มเหลว'}</div>`;
+                    }
+                } catch (error) {
+                    console.error('Error during scan:', error);
+                    scanButton.classList.remove('hidden');
+                    scanSpinner.classList.add('hidden');
+                    scanResultsDiv.classList.remove('hidden');
+                    resultsList.innerHTML = '<div class="text-center text-danger">เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์</div>';
+                }
+            });
+
+            document.getElementById('riskPortsBtn').addEventListener('click', function() {
+                document.getElementById('scanType').value = 'risk_ports';
+                document.getElementById('customPortsGroup').classList.add('hidden');
+                document.getElementById('riskPortsBtn').classList.add('active');
+                document.getElementById('customPortsBtn').classList.remove('active');
+            });
+
+            document.getElementById('customPortsBtn').addEventListener('click', function() {
+                document.getElementById('scanType').value = 'custom_range';
+                document.getElementById('customPortsGroup').classList.remove('hidden');
+                document.getElementById('customPortsBtn').classList.add('active');
+                document.getElementById('riskPortsBtn').classList.remove('active');
+            });
+
+            // Handle username modal submission
+            document.getElementById('usernameForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const usernameInput = document.getElementById('usernameInput').value;
+                const formData = new FormData();
+                formData.append('username', usernameInput);
+
+                try {
+                    const response = await fetch('/api/set-username', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    if (response.ok) {
+                        document.getElementById('usernameModal').classList.add('hidden');
+                        document.getElementById('displayUsername').textContent = `ผู้ใช้: ${usernameInput}`;
+                        // Reload history after setting username
+                        if (document.getElementById('historyTab').classList.contains('active')) {
+                            fetchHistory();
+                        }
+                    } else {
+                        alert('Failed to set username.');
+                    }
+                } catch (error) {
+                    console.error('Error setting username:', error);
+                    alert('Error connecting to server to set username.');
+                }
+            });
+
+            // Initial load of history if on history tab
+            if (document.getElementById('historyTab').classList.contains('active')) {
+                fetchHistory();
+            }
+        });
+
+        async function checkUsername() {
+            const username = getCookie('username');
+            if (!username) {
+                document.getElementById('usernameModal').classList.remove('hidden');
+            } else {
+                document.getElementById('displayUsername').textContent = `ผู้ใช้: ${decodeURIComponent(username)}`;
+            }
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('currentTime').textContent = `เวลา: ${now.toLocaleString('th-TH')}`;
+        }
+
+        async function fetchPerformanceStatus() {
+            try {
+                const res = await fetch('/api/performance');
+                const data = await res.json();
+                document.getElementById('systemPerformance').textContent = `ประสิทธิภาพ: CPU ${data.cpu_percent}% / RAM ${data.memory_percent.toFixed(1)}%`;
+            } catch (error) {
+                console.error("Failed to fetch performance:", error);
+                document.getElementById('systemPerformance').textContent = `ประสิทธิภาพ: ไม่สามารถโหลดได้`;
+            }
+        }
+
+        async function fetchHistory() {
+            const historyContent = document.getElementById('historyContent');
+            historyContent.innerHTML = '<div class="text-center"><div class="spinner"></div> กำลังโหลดประวัติ...</div>';
+            try {
+                const response = await fetch('/api/history');
+                const data = await response.json();
+                let html = '';
+                if (data.logs.length === 0) {
+                    html = '<div class="text-center text-muted">ไม่มีประวัติการสแกน</div>';
+                } else {
+                    html = ``; // No longer need the CSV button here as it's separate
+                    data.logs.forEach(log => {
+                        // log structure: {id, username, target, port, status, service, timestamp, ip_address}
+                        const isRisk = RISK_PORTS.includes(log.port);
+                        html += `
+                            <div class="result-item">
+                                <div>
+                                    <strong>IP: ${log.ip_address}</strong>
+                                    <div class="text-muted">Port: ${log.port}</div>
+                                    <div class="text-muted">สแกนโดย: ${log.username} เมื่อ ${new Date(log.timestamp*1000).toLocaleString('th-TH')}</div>
+                                    <div class="text-muted">บริการ: ${log.service}</div>
+                                    <div class="text-muted">เป้าหมายที่ระบุ: ${log.target}</div>
+                                </div>
+                                <span class="port-badge ${log.status} ${isRisk && log.status === 'open' ? 'risk-port' : ''}">${log.status}</span>
+                            </div>`;
+                    });
+                }
+                historyContent.innerHTML = html;
+            } catch (error) {
+                console.error('Error fetching history:', error);
+                historyContent.innerHTML = '<div class="text-center text-danger">เกิดข้อผิดพลาดในการโหลดประวัติ</div>';
+            }
+        }
+
+        async function exportLogs(format) {
+            try {
+                window.location.href = `/api/export-${format}`; // Corrected to match backend endpoints
+            } catch (error) {
+                console.error(`Error exporting ${format}:`, error);
+                alert(`เกิดข้อผิดพลาดในการดาวน์โหลดไฟล์ ${format}`);
+            }
+        }
+
+        function showPage(page) {
+            document.getElementById('scannerPage').classList.toggle('hidden', page !== 'scanner');
+            document.getElementById('historyPage').classList.toggle('hidden', page !== 'history');
+            document.getElementById('scannerTab').classList.toggle('active', page === 'scanner');
+            document.getElementById('historyTab').classList.toggle('active', page === 'history');
+
+            if (page === 'history') {
+                fetchHistory();
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+    </script>
+</body>
+</html>
